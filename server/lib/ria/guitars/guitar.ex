@@ -15,6 +15,6 @@ defmodule Ria.Guitars.Guitar do
   def changeset(guitar, attrs) do
     guitar
     |> cast(attrs, [:type, :brand, :img_url, :prod_year])
-    |> validate_required([:type, :brand, :img_url, :prod_year])
+    |> validate_required([:type, :brand, :prod_year])
   end
 end

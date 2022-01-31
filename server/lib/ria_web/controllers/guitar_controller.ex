@@ -11,7 +11,7 @@ defmodule RiaWeb.GuitarController do
     render(conn, "index.json", guitars: guitars)
   end
 
-  def create(conn, %{"guitar" => guitar_params}) do
+  def create(conn, guitar_params) do
     with {:ok, %Guitar{} = guitar} <- Guitars.create_guitar(guitar_params) do
       conn
       |> put_status(:created)
@@ -25,7 +25,7 @@ defmodule RiaWeb.GuitarController do
     render(conn, "show.json", guitar: guitar)
   end
 
-  def update(conn, %{"id" => id, "guitar" => guitar_params}) do
+  def update(conn, %{"id" => id} = guitar_params) do
     guitar = Guitars.get_guitar!(id)
 
     with {:ok, %Guitar{} = guitar} <- Guitars.update_guitar(guitar, guitar_params) do
