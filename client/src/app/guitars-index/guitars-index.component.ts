@@ -9,6 +9,8 @@ import { Guitar } from '../resources/guitar';
 })
 export class GuitarsIndexComponent implements OnInit {
   guitars!: Guitar[];
+  fromProdYear: string = '';
+  toProdYear: string = '';
 
   constructor(private guitarService: GuitarService) {}
 
@@ -34,4 +36,6 @@ export class GuitarsIndexComponent implements OnInit {
     this.guitars = this.guitars.filter((s) => s.id !== guitar.id);
     this.guitarService.deleteGuitar(guitar).subscribe();
   }
+
+  filterGuitars(): void {}
 }

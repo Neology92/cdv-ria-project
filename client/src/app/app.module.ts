@@ -8,9 +8,10 @@ import { GuitarsIndexComponent } from './guitars-index/guitars-index.component';
 import { GuitarComponent } from './guitar/guitar.component';
 import { GuitarService } from './guitar.service';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, GuitarsIndexComponent, GuitarComponent],
+  declarations: [AppComponent, GuitarsIndexComponent, GuitarComponent, FilterPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [GuitarService],
   bootstrap: [AppComponent],

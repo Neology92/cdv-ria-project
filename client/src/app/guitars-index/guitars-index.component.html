@@ -43,8 +43,8 @@
       <div class="data">
         <label>
           <span class="data__name">Production year:</span>
-          <input #filterProdYearFrom placeholder="from" />
-          <input #filterProdYearTo placeholder="to" />
+          <input [(ngModel)]="fromProdYear" placeholder="from" />
+          <input [(ngModel)]="toProdYear" placeholder="to" />
         </label>
       </div>
     </div>
@@ -59,7 +59,7 @@
         <th></th>
       </tr>
 
-      <tr *ngFor="let guitar of guitars">
+      <tr *ngFor="let guitar of guitars | filter: fromProdYear:toProdYear">
         <td>{{ guitar.id }}</td>
         <td>{{ guitar.type }}</td>
         <td>{{ guitar.brand }}</td>
