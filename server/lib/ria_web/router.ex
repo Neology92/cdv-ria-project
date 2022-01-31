@@ -10,6 +10,6 @@ defmodule RiaWeb.Router do
   scope "/api", RiaWeb do
     pipe_through :api
 
-    resources("/guitars", GuitarsController, except: [:new, :edit])
+    resources "/guitars", GuitarController, except: [:new, :edit]
   end
 end
