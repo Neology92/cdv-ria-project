@@ -39,6 +39,14 @@ defmodule RiaWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
+
+  plug(Corsica,
+    max_age: 600,
+    origins: "*",
+    expose_headers: ~w(X-Foo),
+    allow_headers: ["content-type"]
+  )
+
   plug Plug.Session, @session_options
   plug RiaWeb.Router
 end
