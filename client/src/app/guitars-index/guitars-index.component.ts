@@ -19,7 +19,6 @@ export class GuitarsIndexComponent implements OnInit {
   getGuitars(): void {
     this.guitarService.getGuitars().subscribe((guitars) => {
       this.guitars = guitars;
-      console.log(guitars);
     });
   }
 

@@ -51,18 +51,6 @@
     <td>{{ guitar.brand }}</td>
     <td>{{ guitar.prodYear }}</td>
     <td><button title="Remove" (click)="delete(guitar)">Delete</button></td>
-    <td><a routerLink="/guitars/{{ guitar.id }}">Show</a></td>
+    <td><a routerLink="/guitars/{{ guitar.id }}">Edit</a></td>
   </tr>
 </table>
-
-<!-- <ul class="guitars">
-  <li *ngFor="let guitar of guitars">
-
-    <a routerLink="/guitars/{{ guitar.id }}">
-      &nbsp;<span>{{ guitar.prodYear }}</span> &nbsp;<span>{{
-        guitar.type
-      }}</span>
-      &nbsp;<span>{{ guitar.brand }}</span>
-    </a>
-  </li>
-</ul> -->
