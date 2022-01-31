@@ -1,56 +1,72 @@
-<h2>New guitar</h2>
-<div>
-  <label>
-    Type:
-    <input #guitarType />
-  </label>
-  <label>
-    Brand:
-    <input #guitarBrand />
-  </label>
-  <label>
-    Prod. year:
-    <input #guitarProdYear />
-  </label>
-  <label>
-    Img Url:
-    <input #guitarUrl />
-  </label>
-  <button
-    (click)="
-      create(
-        guitarType.value,
-        guitarBrand.value,
-        +guitarProdYear.value,
-        guitarUrl.value
-      );
-      guitarType.value = '';
-      guitarBrand.value = '';
-      guitarProdYear.value = '';
-      guitarUrl.value = ''
-    "
-  >
-    Add
-  </button>
+<div class="container">
+  <div class="data">
+    <h2>New guitar</h2>
+    <label>
+      Type:
+      <input #guitarType />
+    </label>
+    <label>
+      Brand:
+      <input #guitarBrand />
+    </label>
+    <label>
+      Prod. year:
+      <input #guitarProdYear />
+    </label>
+    <label>
+      Img Url:
+      <input #guitarUrl />
+    </label>
+    <button
+      (click)="
+        create(
+          guitarType.value,
+          guitarBrand.value,
+          +guitarProdYear.value,
+          guitarUrl.value
+        );
+        guitarType.value = '';
+        guitarBrand.value = '';
+        guitarProdYear.value = '';
+        guitarUrl.value = ''
+      "
+    >
+      Add
+    </button>
+  </div>
+
+  <div>
+    <h2>List of guitars</h2>
+
+    <div>
+      <h3>Filter</h3>
+      <div class="data">
+        <label>
+          <span class="data__name">Production year:</span>
+          <input #filterProdYearFrom placeholder="from" />
+          <input #filterProdYearTo placeholder="to" />
+        </label>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Type</th>
+        <th>Brand</th>
+        <th>Prod. Year</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr *ngFor="let guitar of guitars">
+        <td>{{ guitar.id }}</td>
+        <td>{{ guitar.type }}</td>
+        <td>{{ guitar.brand }}</td>
+        <td>{{ guitar.prodYear }}</td>
+        <td><button title="Remove" (click)="delete(guitar)">Delete</button></td>
+        <td><a routerLink="/guitars/{{ guitar.id }}">Edit</a></td>
+      </tr>
+    </table>
+  </div>
 </div>
-
-<h2>List of guitars</h2>
-<table>
-  <tr>
-    <th>id</th>
-    <th>Type</th>
-    <th>Brand</th>
-    <th>Prod. Year</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <tr *ngFor="let guitar of guitars">
-    <td>{{ guitar.id }}</td>
-    <td>{{ guitar.type }}</td>
-    <td>{{ guitar.brand }}</td>
-    <td>{{ guitar.prodYear }}</td>
-    <td><button title="Remove" (click)="delete(guitar)">Delete</button></td>
-    <td><a routerLink="/guitars/{{ guitar.id }}">Edit</a></td>
-  </tr>
-</table>
