@@ -6,7 +6,6 @@ defmodule RiaWeb.Router do
     plug(ProperCase.Plug.SnakeCaseParams)
   end
 
-
   scope "/api", RiaWeb do
     pipe_through :api
 

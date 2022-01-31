@@ -21,7 +21,12 @@ defmodule Ria.GuitarsTest do
     end
 
     test "create_guitar/1 with valid data creates a guitar" do
-      valid_attrs = %{brand: "some brand", img_url: "some img_url", prod_year: 42, type: "some type"}
+      valid_attrs = %{
+        brand: "some brand",
+        img_url: "some img_url",
+        prod_year: 42,
+        type: "some type"
+      }
 
       assert {:ok, %Guitar{} = guitar} = Guitars.create_guitar(valid_attrs)
       assert guitar.brand == "some brand"
@@ -36,7 +41,13 @@ defmodule Ria.GuitarsTest do
 
     test "update_guitar/2 with valid data updates the guitar" do
       guitar = guitar_fixture()
-      update_attrs = %{brand: "some updated brand", img_url: "some updated img_url", prod_year: 43, type: "some updated type"}
+
+      update_attrs = %{
+        brand: "some updated brand",
+        img_url: "some updated img_url",
+        prod_year: 43,
+        type: "some updated type"
+      }
 
       assert {:ok, %Guitar{} = guitar} = Guitars.update_guitar(guitar, update_attrs)
       assert guitar.brand == "some updated brand"
