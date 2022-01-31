@@ -4,8 +4,8 @@ import { GuitarComponent } from './guitar/guitar.component';
 import { GuitarsIndexComponent } from './guitars-index/guitars-index.component';
 
 const routes: Routes = [
-  { path: 'guitars', component: GuitarsIndexComponent },
   { path: 'guitars/:id', component: GuitarComponent },
+  { path: 'guitars', component: GuitarsIndexComponent },
   { path: '', redirectTo: '/guitars', pathMatch: 'full' },
 ];
 
