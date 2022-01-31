@@ -1,0 +1,42 @@
+img {
+  max-width: 600px;
+  max-height: 400px;
+  margin-left: 100px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.data__name {
+  display: block;
+}
+
+input {
+  margin-bottom: 20px;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 100px;
+}
+
+button {
+  border: none;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save {
+  background-color: rgba($color: #059c32, $alpha: 1);
+  color: white;
+}

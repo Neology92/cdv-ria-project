@@ -2,21 +2,29 @@
   <h2>Guitar details</h2>
   <div><span>Id: </span>{{ guitar.id }}</div>
 
-  <div>
-    <label>
-      Type:
-      <input [(ngModel)]="guitar.type" placeholder="type" />
-    </label>
-    <label>
-      Brand:
-      <input [(ngModel)]="guitar.brand" placeholder="brand" />
-    </label>
-    <label>
-      Prod year:
-      <input [(ngModel)]="guitar.prodYear" placeholder="production year" />
-    </label>
+  <div class="container">
+    <div class="data">
+      <label>
+        <span class="data__name">Type:</span>
+        <input [(ngModel)]="guitar.type" placeholder="type" />
+      </label>
+      <label>
+        <span class="data__name">Brand:</span>
+        <input [(ngModel)]="guitar.brand" placeholder="brand" />
+      </label>
+      <label>
+        <span class="data__name">Prod year:</span>
+        <input [(ngModel)]="guitar.prodYear" placeholder="production year" />
+      </label>
+      <label>
+        <span class="data__name">Image:</span>
+        <input [(ngModel)]="guitar.imgUrl" placeholder="image url" />
+      </label>
+      <button (click)="save()" class="save">Save</button>
+      <button (click)="goBack()">Back</button>
+    </div>
+    <div>
+      <img src="{{ guitar.imgUrl }}" />
+    </div>
   </div>
-
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
 </div>
